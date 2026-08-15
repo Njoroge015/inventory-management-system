@@ -1,0 +1,6 @@
+[build]
+  command = "composer install --no-dev --optimize-autoloader && npm ci && npm run build"
+  publish = "public"
+
+[context.production.environment]
+  NODE_ENV = "production"
