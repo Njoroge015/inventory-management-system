@@ -1,6 +1,4 @@
 [build]
-  command = "composer install --no-dev --optimize-autoloader && npm ci && npm run build"
+  # Install Composer dependencies, install npm (including dev deps), then build with Vite
+  command = "composer install --no-dev --optimize-autoloader && npm ci --include=dev && npm run build"
   publish = "public"
-
-[context.production.environment]
-  NODE_ENV = "production"
