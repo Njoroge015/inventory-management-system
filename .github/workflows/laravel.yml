@@ -19,7 +19,7 @@ jobs:
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
-      run: composer install  --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      run: composer install  --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --prefer-source
     - name: Install Node Dependencies
       run: npm install
     - name: Build Assets
@@ -36,4 +36,5 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
+        COMPOSER_PROCESS_TIMEOUT: 600
       run: php artisan test
