@@ -99,13 +99,13 @@ return [
 
     'key' => env('APP_KEY'),
 
-  'previous_keys' => array_values(
-    array_filter(
-        explode(',', (string) env('APP_PREVIOUS_KEYS', ''))
+    'previous_keys' => array_values(
+        array_filter(
+            explode(',', (string) env('APP_PREVIOUS_KEYS', ''))
     )
 ),
 
-    /*
+/*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
     |--------------------------------------------------------------------------
@@ -116,7 +116,7 @@ return [
     |
     | Supported drivers: "file", "cache"
     |
-    */
+*/
 
     'maintenance' => [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
