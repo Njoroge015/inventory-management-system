@@ -16,8 +16,10 @@ jobs:
       with:
         php-version: '8.3'
     - uses: actions/checkout@v4
-    - name: Copy .env
-      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+    - name: Remove existing .env and copy .env.example
+      run: |
+        rm -f .env
+        cp .env.example .env
     - name: Install Dependencies
       run: composer install  --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --prefer-source
     - name: Install Node Dependencies
